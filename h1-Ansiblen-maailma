@@ -1,0 +1,26 @@
+SSH
+  -	SSH on johtava tapa kirjautua turvallisesti servereihin.
+  -	Julkisen avaimen autentikointi on erittäin kätevää. Jos sitä käyttää oikein, voi jopa tehdä serveristä turvallisemman.
+  -	Ensiksi SSH ladataan $ sudo apt-get -y install SSH -komennolla
+  -	Se pitää myös laittaa käynnistymään kun kone bootataan komennolla $ sudo systemctl enable --now ssh
+  -	Sitten se testataan komennolla $ ssh localhost. Kaikki ok kun näkee itsensä kirjautuneeta kahdesti.
+  -	Automaattinen kirjautuminen avaimella tehdään komennolla $ ssh-keygen. Entteriä kolmesti hyväksyy perusasetukset.
+  -	Sitten laitetaan komento $ ssh-copy-id localhost, jonka jälkeen kun on salasana annettu laite-taan vielä $ ssh localhost. Jos kirjauduit ilman avainta homma onnistui.
+
+  Kysymys: Mitä muita turvallisia kirjautumistapoja servereillä on?
+    
+Ansible
+  -	Ansible on konfiguraatio managerointi työkalu. 
+  -	Kuvailet lopputilanteen ja ansible tekee muutoksia vain, jos ne ovat tarpeellisia.
+  -	Ansible toimii SSH:n läpi.
+  -	Aloitetaan katsomalla, että päivitykset on kunnossa ja sitten ladataan ansible ja muutama extra komennolla $ sudo apt-get install ansible micro bash-completion tree.
+  -	Sitten tehdään ansiblelle kansio komennoilla $ cd, $ mkdir ansible/, $ cd ansible/.
+  -	Sitten luodaan hosts.ini ja kirjoitetaan sinne localhost komennolla $ micro hosts.ini. Sisältö tarkistetaan komennolla $ cat hosts.ini
+  -	Sama asia tehtiin ansible.cfg ja site.yml tiedostoille.
+  -	Sitten suoritettiin komento $ ansible-playbook site.yml, joka johti erroriin.
+  -	Erroria korjatakseen luodaan roles/hello/tasks/main.yml ja sen jälkeen kun suorittaa playboo-kin uudestaan se toimii ja näyttää, että yksi tiedosto muuttui.
+  -	Laittamalla komennon $ ssh localhost 'cat /tmp/hello-ansible' saadaan teksti: See you at TeroKarvinen.com!
+  -	Seuraavaksi muokataan ansible.cfg:tä  ja lisätään pohjalle display_args_to_stdout = true. Suorittamalla playbookin TASK sai uuden sisällön.
+  -	Lopuksi meillä on 4 tiedostoa, joita kaikkia pyöritetään playbookilla.
+
+  Kysymys: Toimiiko ansible muidenkin turvallisten kirjautumistapojen kanssa?
