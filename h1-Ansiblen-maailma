@@ -24,3 +24,7 @@ Ansible
   -	Lopuksi meillä on 4 tiedostoa, joita kaikkia pyöritetään playbookilla.
 
   Kysymys: Toimiiko ansible muidenkin turvallisten kirjautumistapojen kanssa?
+
+Lähteet: 
+Karvinen 2026: https://terokarvinen.com/ssh-public-key-login-without-password/
+Karvinen 2026: https://terokarvinen.com/hello-ansible/
