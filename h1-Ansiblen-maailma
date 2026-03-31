@@ -1,4 +1,4 @@
-SSH
+#SSH
   -	SSH on johtava tapa kirjautua turvallisesti servereihin.
   -	Julkisen avaimen autentikointi on erittäin kätevää. Jos sitä käyttää oikein, voi jopa tehdä serveristä turvallisemman.
   -	Ensiksi SSH ladataan $ sudo apt-get -y install SSH -komennolla
@@ -9,7 +9,7 @@ SSH
 
   Kysymys: Mitä muita turvallisia kirjautumistapoja servereillä on?
     
-Ansible
+#Ansible
   -	Ansible on konfiguraatio managerointi työkalu. 
   -	Kuvailet lopputilanteen ja ansible tekee muutoksia vain, jos ne ovat tarpeellisia.
   -	Ansible toimii SSH:n läpi.
@@ -25,6 +25,6 @@ Ansible
 
   Kysymys: Toimiiko ansible muidenkin turvallisten kirjautumistapojen kanssa?
 
-Lähteet: 
-Karvinen 2026: https://terokarvinen.com/ssh-public-key-login-without-password/
-Karvinen 2026: https://terokarvinen.com/hello-ansible/
+#Lähteet: 
+  Karvinen 2026: https://terokarvinen.com/ssh-public-key-login-without-password/
+  Karvinen 2026: https://terokarvinen.com/hello-ansible/
