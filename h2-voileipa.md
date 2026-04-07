@@ -106,6 +106,14 @@
     user: antero
     key: "ssh-ed25519 AAAAbhbhdhCCdhdhd..."
 
+# Package
+Tässä asennetut packaget:
+<img width="269" height="284" alt="image" src="https://github.com/user-attachments/assets/d19c4fc7-1ecf-4753-94d9-698df05b07b3" />
+
+# File
+Asensin treen:
+<img width="809" height="70" alt="image" src="https://github.com/user-attachments/assets/22da8b3a-adff-4fbb-8da7-5cb5cd0a3c37" />
+
 # Lähteet
 Tero Karvinen 2026 https://terokarvinen.com/palvelinten-hallinta/#h1-hei-ansiblen-maailma
 ChatGPT, osittain tekstin luonnissa ja kääntämisessä.
