@@ -15,6 +15,7 @@
 # Salasanaton Sudo Ansiblen kanssa
 - Aloitetaan luomalla kaksi roolia, jotka ovat **world** ja **antero**. Niille tulee molemmille alakansio **tasks**, sekä molemmille **main.yml-tiedosto**, tähän malliin:
 <img width="355" height="250" alt="image" src="https://github.com/user-attachments/assets/911bb5dc-f5f4-4d19-be78-36bed7c7d231" />
+
 - Sitten kirjoitellaan antero-roolin mainiin vähäsen tekstiä. Sinne tulee ryhmä, käyttäjä, avain ja copy.
 - Seuraavana puun pohjalla olevaan site.yml-tiedostoon kirjoitetaan tekstiä: - hosts: all, become: true, roles: - world, - antero
 - Nyt kun laittaa $ ansible-playbook site.yml niin saa valituksen, että sudo tarvitsee salasanan. Se onnistuu komennolla **$ ansible-playbook site.yml --ask-become-password** tai lyhennettynä **$ ansible-playbook site.yml -K** tekee saman asian. Näyttää tältä:
