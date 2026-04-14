@@ -66,16 +66,17 @@ mkdir -p /home/joonas/publicsite
 micro -p /home/joonas/publicsite/index.html
 
 Sinne kirjoittelin pienen tekstin:
-
-* <h1>Hello Apache</h1>
-
+~~~
+<h1>Hello Apache</h1>
+~~~
 Apache config seuraavaksi
 
 sudo micro /etc/apache2/sites-available/publicsite.conf
 
 Sinne tuli sisälle tämmöistä tekstiä:
 
-* <VirtualHost *:80>
+~~~
+<VirtualHost *:80>
     ServerName localhost
     DocumentRoot /home/joonas/publicsite/
 
@@ -83,4 +84,5 @@ Sinne tuli sisälle tämmöistä tekstiä:
         Require all granted
     </Directory>
 </VirtualHost>
+~~~
 
