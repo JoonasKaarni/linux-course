@@ -118,5 +118,37 @@ sudo micro /etc/nginx/sites-available/default
 Sinne lisäsin root kohtaan publicsiten ja indexin. Sitten testissä sivulla näkyy Moottorix!
 <img width="512" height="200" alt="image" src="https://github.com/user-attachments/assets/c2cb6adc-0eef-4c61-b2e7-5ce6e331b181" />
 
+# c) Automoottorix. Automatisoi Nginx asennus Ansiblella
+Aloitin luomalla nginx kansion:
+~~~
+mkdir -p ansible/roles/nginx/{tasks,handlers,files}
+cd ansible
+~~~
+lisäsin myös nginxin site.yml rooleihin. Seuraavaksi kirjoittelin Nginx roolin tehtävät:
+~~~
+micro roles/nginx/tasks/main.yml
+~~~
+Sinne tulee sisään tämmönen tekstiseinä:
+<img width="524" height="409" alt="image" src="https://github.com/user-attachments/assets/20618cac-2c41-4ae1-8b72-0a66400a37fc" />
 
+Sitten tehdään handleri
+~~~
+micro roles/nginx/handlers/main.yml
+~~~
+Sinne tuli pienempi teksti
+~~~
+- name: restart nginx
+  systemd:
+    name: nginx
+    state: restarted
+~~~
+Sitten tulee konfigia
+~~~
+micro roles/nginx/files/publicsite.conf
+~~~
+sitten ajoin ansiblen, jonka jälkeen sivulle yhdistäessä näkyy Moottorix toimii!
+<img width="424" height="171" alt="image" src="https://github.com/user-attachments/assets/630b8d31-ead7-4e87-bd7e-8ea1e9261f95" />
 
+# Lähteet
+Karvinen 2026: https://terokarvinen.com/apache-ansible/
+ChatGPT: ohjeistus ja virheiden/ongelmien ratkonta
