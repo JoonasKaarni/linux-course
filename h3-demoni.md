@@ -42,4 +42,45 @@ EXAMPLES
 - Oma kysymys: onko reloaded yhtä yleisin käytetty kuin restarted?
 
 # a) Apassi. Asenna Apache 2 käsin.
+Aloitetaan asennus laittamalla muutaman komento.
+
+sudo apt-get update
+sudo apt-get install apache2
+
+Kun se on ladannut käynnistetään ja tarkistetaan sen tila komennoilla:
+
+sudo systemctl start apache2
+sudo systemctl status apache2
+
+<img width="697" height="103" alt="image" src="https://github.com/user-attachments/assets/d27723eb-5e4a-4bec-995d-c5762f7da5f8" />
+
+
+Sitten testataan nettiselaimessa sivun toimivuus menemälle osoitteeseen http://localhost
+
+<img width="912" height="297" alt="image" src="https://github.com/user-attachments/assets/794df87a-0a40-4ed9-aadb-df534088d5f9" />
+
+
+Sitten loin oman sivun käyttäjälle. Ensin tein kansion komennolla
+
+mkdir -p /home/joonas/publicsite
+micro -p /home/joonas/publicsite/index.html
+
+Sinne kirjoittelin pienen tekstin:
+
+* <h1>Hello Apache</h1>
+
+Apache config seuraavaksi
+
+sudo micro /etc/apache2/sites-available/publicsite.conf
+
+Sinne tuli sisälle tämmöistä tekstiä:
+
+* <VirtualHost *:80>
+    ServerName localhost
+    DocumentRoot /home/joonas/publicsite/
+
+    <Directory /home/joonas/publicsite/>
+        Require all granted
+    </Directory>
+</VirtualHost>
 
