@@ -1,4 +1,4 @@
-<img width="769" height="399" alt="image" src="https://github.com/user-attachments/assets/f993cec0-4b97-4163-ab4e-95c98c1aecd7" /># H3-Demoni
+# H3-Demoni
 
 # x) Lue ja tiivistä
 
