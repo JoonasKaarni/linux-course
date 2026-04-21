@@ -59,3 +59,49 @@ ansible-playbook -i inventory site.yml -K
 
 # c) Asetus. Muuta asetustiedostoa herralla (master, "control node") ja aja ansible uudestaan.
 
+fail2bannin config lötyy paikasta /etc/fail2ban/jail.local. Teen aluksi templaten paikkaan ansible/roles/fail2ban/templates/jail.local.j2. Sisältö näyttää tältä:
+
+<img width="291" height="119" alt="image" src="https://github.com/user-attachments/assets/f008939f-0448-47fb-9775-a0b3f0ab34bc" />
+
+Sitten lisätään b-kohdassa tehtyyn ansible/roles/fail2ban/tasks/main.yml:iin uusi kohta.
+
+<img width="385" height="130" alt="image" src="https://github.com/user-attachments/assets/a6a1c15b-24ef-4fc4-ad72-30602ead0dc0" />
+
+Lisätään tekstiä myös handlersiin ja defaultsiin.
+
+<img width="371" height="192" alt="image" src="https://github.com/user-attachments/assets/f27ef0cc-d6c0-4e08-aabe-8a19516b0718" />
+.
+<img width="361" height="133" alt="image" src="https://github.com/user-attachments/assets/4fcd0891-2990-409f-9df9-b75b551250c9" />
+
+Suoritin playbookin ja laitettu bantime näkyy tuossa.
+<img width="869" height="454" alt="image" src="https://github.com/user-attachments/assets/42229514-38cf-4738-92d7-63a6b4b48a3d" />
+
+Vaihdan sitten bantimeksi 1200 ja playbookin jälkeen siinä se on!
+<img width="781" height="444" alt="image" src="https://github.com/user-attachments/assets/724b863e-a4af-4c7b-8dd3-6b43a6fa78ef" />
+
+# d) Paikka remonttiin. Riko jotain asetuksia.
+
+Rikoin paikkoja poistamalla demonin seuraavasti.
+~~~
+sudo apt purge fail2ban -y
+sudo rm -rf /etc/fail2ban
+~~~
+<img width="873" height="437" alt="image" src="https://github.com/user-attachments/assets/70c7370f-b678-407f-a050-5fef6cb2fc49" />
+
+Sitten suoritin playbookin uudestaan ja checkasin fail2banin statuksen heti sen jälkeen. Tilanne korjattu ja kaikki ok!
+
+<img width="875" height="652" alt="image" src="https://github.com/user-attachments/assets/728b198e-8823-499b-97d2-3a99702c9240" />
+
+# e) Idempotentti. Osoita, että tilasi on idempotentti.
+
+Kuvan teksti on pientä, jotta sain koko homman näkymään. Tässä eka playbook ja sitten toinen perään.
+<img width="932" height="692" alt="image" src="https://github.com/user-attachments/assets/c0308fb5-ca59-4823-91ca-10b45f0e5997" />
+.
+<img width="717" height="705" alt="image" src="https://github.com/user-attachments/assets/5b33bdcf-82e8-4b70-808b-35e86f0373cb" />
+.
+
+# Lähteet
+Karvinen 2026: https://terokarvinen.com/palvelinten-hallinta/#h3-demoni
+ChatGPT: Ongelmien ratkonta, varsinkin idempotentti osiossa...
+
+
