@@ -31,6 +31,7 @@ Demoni toimii käsin asennettuna.
 
 <img width="871" height="281" alt="image" src="https://github.com/user-attachments/assets/96348a8d-e0b1-4ed3-b119-fe4d9786b3ab" />
 
+
 <img width="566" height="76" alt="image" src="https://github.com/user-attachments/assets/dc60a8af-3db1-4445-b9c9-b2433b3aa988" />
 
 # b) Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
