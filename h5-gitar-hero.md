@@ -123,6 +123,9 @@ Sitten tein muutoksen site.yml:iin ja ajoin playbookin uudelleen:
 Se toimi, sitten pitääkin vain committaa ja pushata, jonka jälkeen checkasin Githubin ja sinne se texti tuli!
 <img width="492" height="374" alt="image" src="https://github.com/user-attachments/assets/30219387-c610-49bd-a389-59cb29f1944d" />
 
+# f) Pari
+Pari on!!
+
 # Lähteet
 Karvinen 2026: https://terokarvinen.com/palvelinten-hallinta/
 Chacon and Straub 2014: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
