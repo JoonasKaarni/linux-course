@@ -86,6 +86,8 @@ Siinä näkyy muutokset:
 
 <img width="899" height="578" alt="image" src="https://github.com/user-attachments/assets/300ce5c2-b188-45ea-9ff3-9f99af498c42" />
 
+Sieltä näkee nyt commit ID, tekijän nimi, sähköposti ja viesti
+
 Tarkistin myös käyttäjätiedot ja ne ovat oikein!
 
 <img width="636" height="99" alt="image" src="https://github.com/user-attachments/assets/c5582308-168d-46cd-bcf1-ac08b1c3a335" />
