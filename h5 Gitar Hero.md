@@ -76,5 +76,54 @@ git reset --hard
 <img width="611" height="144" alt="image" src="https://github.com/user-attachments/assets/262107e6-812b-466d-b461-03d3145c0db7" />
 
 Huh... Virus poistettu ja päivä pelastettu.
-# e) Gitanbile.
 
+# d) Tukki
+Ensin tarkistetaan commit-historia komennolla:
+~~~
+git log --patch
+~~~
+Siinä näkyy muutokset:
+
+<img width="899" height="578" alt="image" src="https://github.com/user-attachments/assets/300ce5c2-b188-45ea-9ff3-9f99af498c42" />
+
+Tarkistin myös käyttäjätiedot ja ne ovat oikein!
+
+<img width="636" height="99" alt="image" src="https://github.com/user-attachments/assets/c5582308-168d-46cd-bcf1-ac08b1c3a335" />
+
+
+# e) Gitanbile.
+Hommat alkavat sillä, että luon sunshine repoon ansible kansion:
+<img width="657" height="58" alt="image" src="https://github.com/user-attachments/assets/dceed4d6-df85-4217-a526-bdbc362bcde9" />
+site.yml:iin tuli sisälle erittäin simppeli playbook:
+~~~
+# site.yml
+- hosts: localhost
+  tasks:
+    - name: Hello
+      debug:
+        msg: "Hello World"
+~~~
+Sitten ajettiin ansible ja tulokset olivat hyvät!
+<img width="917" height="361" alt="image" src="https://github.com/user-attachments/assets/18922842-c1c9-4839-ab6d-6fbdd4f41fb5" />
+
+Sitten mentiin ulos ansible kansiosta ja lisättiin gitillä kansio GitHubiinkin.
+~~~
+cd ..
+git add ansible/
+git commit
+git pull
+git push
+~~~
+Pushin jälkeen ansible näkyykin Githubissa!
+<img width="528" height="313" alt="image" src="https://github.com/user-attachments/assets/0bf01952-12e3-4867-aeb0-492895394ed8" />
+
+Sitten tein muutoksen site.yml:iin ja ajoin playbookin uudelleen:
+<img width="908" height="385" alt="image" src="https://github.com/user-attachments/assets/7946c6b9-373d-443a-b93b-5a4a0cc9d92b" />
+
+Se toimi, sitten pitääkin vain committaa ja pushata, jonka jälkeen checkasin Githubin ja sinne se texti tuli!
+<img width="492" height="374" alt="image" src="https://github.com/user-attachments/assets/30219387-c610-49bd-a389-59cb29f1944d" />
+
+# Lähteet
+Karvinen 2026: https://terokarvinen.com/palvelinten-hallinta/
+Chacon and Straub 2014: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
+ChatGPT: Ongelmien ratkonta rankkoina aikoina.
